@@ -1,15 +1,14 @@
-name: sayhowdareyoutodave 
+name: Sayhowdareyoutodave 
 
 on:
   schedule:
-    # Runs "at minute 55 past every hour" (see https://crontab.guru)
     - cron: "50 4 * * *"
     
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: sayhowdareyoutodave
+      - name: well
         env: 
           TOKEN: ${{ secrets.TOKEN }}
           CHAT_ID: ${{ secrets.CHAT_ID }}
