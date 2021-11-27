@@ -1,0 +1,16 @@
+name: Publish
+on: 
+  schedule:
+    - cron: "50 4 * * *"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+  
+  steps:
+    - uses: actions/checkout@v2
+    - name: sayhowdareyoutodave
+      env: 
+        TOKEN: ${{ secrets.TOKEN }}
+        CHAT_ID: ${{ secrets.CHAT_ID }}
+      run: curl "https://api.telegram.org/bot$TOKEN/sendDocument?document=CgACAgQAAxkBAAMRYaGFsz_fRQYSjcwxO2N2F4tutUwAAooCAAJv7IVS5gIOmkGeny4iBA&chat_id=$CHAT_ID"
